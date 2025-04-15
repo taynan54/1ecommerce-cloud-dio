@@ -67,3 +67,14 @@ A aplicação permite ao usuário:
 ├── .env               # Variáveis de ambiente (conexões, secrets etc.)
 ├── requirements.txt   # Dependências do projeto
 └── prints/            # Capturas de tela do processo
+```
+
+## 💡 Insights e Possibilidades que Aprendi com o Projeto
+
+- 🚀 **Integração simples com serviços da nuvem**: mesmo sem ser especialista, consegui configurar serviços no Azure com poucos cliques.
+- 🧠 **Separação de responsabilidades**: a estrutura do projeto reforça boas práticas entre front-end, back-end e persistência.
+- 🔐 **Uso do `.env`**: essencial para segurança e profissionalismo no gerenciamento de dados sensíveis.
+- ☁️ **Upload e leitura de arquivos na nuvem**: abriu portas para aplicações como galeria de imagens, armazenamento de documentos e apps com currículos.
+- 🐍 **Conexão entre Python e SQL Server**: útil em empresas que já usam SQL Server e desejam modernizar com Python.
+- 📦 **Facilidade para futuros deploys**: com pequenos ajustes, o app pode ser hospedado no Azure App Service e integrar CI/CD.
+- 💰 **Baixo custo com alto valor**: ótimo para MVPs, TCCs, portfólio pessoal e protótipos corporativos.
