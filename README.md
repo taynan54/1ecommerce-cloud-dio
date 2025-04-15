@@ -7,6 +7,7 @@ Este projeto demonstra como integrar diversos serviços da plataforma Microsoft 
 ### 1. Criação do Resource Group
 
 ![Print Resource Group](./prints/resource-group.png)
+
 Criamos um **Resource Group** no Azure para agrupar todos os serviços utilizados no projeto, facilitando a organização e o gerenciamento dos recursos.
 
 ---
@@ -14,6 +15,7 @@ Criamos um **Resource Group** no Azure para agrupar todos os serviços utilizado
 ### 2. Criação do SQL Server e Banco de Dados SQL
 
 ![Print Resource Group](./prints/sql-server.png)
+
 Configuramos um **SQL Server** e um **banco de dados SQL** no Azure. Estes serão usados para armazenar as informações dos produtos, como nome e caminho da imagem.
 
 ---
@@ -21,6 +23,7 @@ Configuramos um **SQL Server** e um **banco de dados SQL** no Azure. Estes serã
 ### 3. Criação da Storage Account
 
 ![Print Storage Account](./prints/storage-account.png)
+
 Criamos uma **Storage Account** no Azure para armazenar as imagens dos produtos. Utilizamos o serviço de **Blob Storage** para upload e acesso aos arquivos.
 
 ---
@@ -28,6 +31,7 @@ Criamos uma **Storage Account** no Azure para armazenar as imagens dos produtos.
 ### 4. Estrutura do Banco de Dados
 
 ![Print Estrutura do Banco de Dados](./prints/banco-dados.png)
+
 Dentro do banco de dados, foi criada uma **tabela de produtos**, contendo os seguintes campos:
 - `id` (int)
 - `nome` (varchar)
@@ -40,6 +44,7 @@ Dentro do banco de dados, foi criada uma **tabela de produtos**, contendo os seg
 ### 5. Implementação do Salvamento de Imagens
 
 ![Print Salvamento de Imagens](./prints/salvamento-imagens.png)
+
 A aplicação permite ao usuário:
 - Cadastrar um novo produto via interface Streamlit
 - Fazer upload de uma imagem
