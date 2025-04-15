@@ -1,72 +1,64 @@
-# Microsoft Application Platform 🚀
+# Microsoft Application Platform com Python e Streamlit 🚀
 
-Este repositório contém um projeto prático desenvolvido durante um curso da Digital Innovation One (DIO), focado na plataforma de aplicações da Microsoft. O objetivo é demonstrar como criar, configurar e utilizar recursos do Azure para desenvolver soluções em nuvem com alta escalabilidade e confiabilidade.
+Este projeto demonstra como integrar diversos serviços da plataforma Microsoft Azure em uma aplicação Python com interface em Streamlit. O foco está na criação de um sistema simples que salva e exibe imagens de produtos, armazenadas no Azure Blob Storage, com dados gerenciados em um banco de dados SQL Server hospedado no Azure.
 
-## 📚 Conteúdo abordado
-
-- Introdução à Plataforma de Aplicações Microsoft
-- Criação e configuração de serviços no Azure
-- Deploy de aplicações em Web Apps
-- Monitoramento e escalabilidade
-- Recursos de segurança e performance
-
-## 🛠️ Tecnologias utilizadas
-
-- Microsoft Azure
-- Azure App Services
-- Azure Resource Group
-- Azure Monitor
-- GitHub
-
-## 💻 Etapas do projeto
+## 📌 Etapas do Projeto
 
 ### 1. Criação do Resource Group
 
-![Print Resource Group](./prints/resource-group.png)  
-Criamos um **Resource Group** para agrupar todos os recursos que serão utilizados no projeto. Isso facilita a organização e o gerenciamento dos serviços.
+![Print Resource Group](./prints/resource-group.png)
+Criamos um **Resource Group** no Azure para agrupar todos os serviços utilizados no projeto, facilitando a organização e o gerenciamento dos recursos.
 
 ---
 
-### 2. Criação do App Service Plan
+### 2. Criação do SQL Server e Banco de Dados SQL
 
-![Print App Service Plan](./prints/app-service-plan.png)  
-O **App Service Plan** define a capacidade computacional da aplicação. Aqui selecionamos o tamanho da instância, escalabilidade e região.
-
----
-
-### 3. Deploy da aplicação no Azure App Service
-
-![Print Deploy](./prints/deploy.png)  
-Realizamos o **deploy da aplicação** diretamente no Azure App Service, utilizando a integração com o GitHub. Isso permite que todo novo commit seja automaticamente publicado.
+![Print Resource Group](./prints/sql-server.png)
+Configuramos um **SQL Server** e um **banco de dados SQL** no Azure. Estes serão usados para armazenar as informações dos produtos, como nome e caminho da imagem.
 
 ---
 
-### 4. Monitoramento com Azure Monitor
+### 3. Criação da Storage Account
 
-![Print Azure Monitor](./prints/azure-monitor.png)  
-Utilizamos o **Azure Monitor** para acompanhar a performance, uso de recursos e logs da aplicação. Isso é essencial para identificar gargalos e manter a aplicação saudável.
-
----
-
-### 5. Configurações adicionais de segurança e escalabilidade
-
-![Print Configurações](./prints/configuracoes.png)  
-Implementamos **configurações de segurança**, como HTTPS obrigatório, e habilitamos a **escalabilidade automática** para responder ao aumento de tráfego.
+![Print Storage Account](./prints/storage-account.png)
+Criamos uma **Storage Account** no Azure para armazenar as imagens dos produtos. Utilizamos o serviço de **Blob Storage** para upload e acesso aos arquivos.
 
 ---
 
-## 📌 Conclusão
+### 4. Estrutura do Banco de Dados
 
-Este projeto demonstrou na prática como a plataforma Microsoft Azure pode ser utilizada para hospedar e gerenciar aplicações modernas em nuvem, com foco em escalabilidade, segurança e performance.
-
-## 🤝 Contribuições
-
-Sinta-se à vontade para abrir issues ou enviar pull requests com sugestões de melhorias!
+![Print Estrutura do Banco de Dados](./prints/banco-dados.png)
+Dentro do banco de dados, foi criada uma **tabela de produtos**, contendo os seguintes campos:
+- `id` (int)
+- `nome` (varchar)
+- `descricao` (varchar)
+- `preco` (decimal)
+- `url_imagem` (varchar)
 
 ---
 
+### 5. Implementação do Salvamento de Imagens
 
-## 📎 Referência
+![Print Salvamento de Imagens](./prints/salvamento-imagens.png)
+A aplicação permite ao usuário:
+- Cadastrar um novo produto via interface Streamlit
+- Fazer upload de uma imagem
+- Salvar a imagem no Blob Storage
+- Gravar os dados do produto e o caminho da imagem no SQL Server
 
-Projeto baseado no conteúdo oferecido pela [Digital Innovation One](https://web.digitalinnovation.one/).
+## 🛠️ Ferramentas e Tecnologias Utilizadas
 
+- **Python**
+- **Streamlit** – Interface interativa da aplicação
+- **azure-storage-blob** – Interação com o Blob Storage
+- **pymssql** – Conexão com SQL Server
+- **dotenv** – Gerenciamento de variáveis sensíveis
+- **Microsoft Azure** – Plataforma de nuvem onde os serviços foram configurados
+
+## 📁 Estrutura do Projeto
+
+```bash
+├── main.py            # Código principal da aplicação Streamlit
+├── .env               # Variáveis de ambiente (conexões, secrets etc.)
+├── requirements.txt   # Dependências do projeto
+└── prints/            # Capturas de tela do processo
